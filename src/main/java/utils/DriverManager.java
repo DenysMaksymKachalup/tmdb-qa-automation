@@ -9,7 +9,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class DriverManager {
     private static WebDriver driver;
-    private  DriverManager () {}
+
+    private DriverManager() {
+    }
 
     public static WebDriver getDriver() {
         if (driver == null) {
@@ -17,6 +19,13 @@ public class DriverManager {
         }
         driver.manage().window().maximize();
         return driver;
+    }
+
+    public static void closeDriver() {
+        if (driver != null) {
+            driver.quit();
+            driver = null;
+        }
     }
 
     private static WebDriver getDriverFromProperties() {
