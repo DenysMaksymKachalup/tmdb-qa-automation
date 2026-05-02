@@ -34,4 +34,9 @@ public class HomePage extends BasePage {
         click(searchButton);
         return new SearchPage(driver);
     }
+
+    public SearchPage search(String text) {
+        setSearchTextBox(text);
+        return clickSearchButton();
+    }
 }
