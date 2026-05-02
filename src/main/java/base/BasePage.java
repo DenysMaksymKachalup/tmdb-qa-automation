@@ -18,6 +18,7 @@ public class BasePage {
     }
 
     public void type(By locator, String text) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).clear();
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(text);
     }
 
