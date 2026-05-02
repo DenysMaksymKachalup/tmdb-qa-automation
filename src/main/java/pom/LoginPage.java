@@ -37,4 +37,8 @@ public class LoginPage extends BasePage {
                 setPasswordText(password)
                 .clickLoginButton();
     }
+
+    public String getUsernameFromLogin() {
+        return getValueFromInput(loginText);
+    }
 }
