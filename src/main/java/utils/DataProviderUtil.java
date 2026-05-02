@@ -29,4 +29,28 @@ public class DataProviderUtil {
                 "12345qwerQWER",
                 "denUserQa2026" + RandomString.make(3) + "@gmail.com")};
     }
+
+    @DataProvider(name = "userWithTakenEmail")
+    public Object[] userWithTakenEmail() {
+        return new Object[]{new UserRegistrationDTO("denUserQa2026" + RandomString.make(3),
+                "12345qwerQWER",
+                "12345qwerQWER",
+                "user@gmail.com")};
+    }
+
+    @DataProvider(name = "userWithInvalidConfirmPassword")
+    public Object[] userWithInvalidConfirmPassword() {
+        return new Object[]{new UserRegistrationDTO("denUserQa2026" + RandomString.make(3),
+                "12345qwerQWER",
+                "12345qwer",
+                "denUserQa2026" + RandomString.make(3) + "@gmail.com")};
+    }
+
+    @DataProvider(name = "userWithTakenUsername")
+    public Object[] userWithTakenUsername() {
+        return new Object[]{new UserRegistrationDTO("user",
+                "12345qwerQWER",
+                "12345qwer",
+                "denUserQa2026" + RandomString.make(3) + "@gmail.com")};
+    }
 }
