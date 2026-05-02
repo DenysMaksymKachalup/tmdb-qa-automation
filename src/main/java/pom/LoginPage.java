@@ -39,6 +39,6 @@ public class LoginPage extends BasePage {
     }
 
     public String getUsernameFromLogin() {
-        return getValueFromInput(loginText);
+        return getValue(loginText);
     }
 }

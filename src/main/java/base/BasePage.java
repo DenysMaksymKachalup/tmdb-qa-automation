@@ -17,9 +17,6 @@ public class BasePage {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    public BasePage() {
-    }
-
     public void type(By locator, String text) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(text);
     }
@@ -32,7 +29,7 @@ public class BasePage {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).isDisplayed();
     }
 
-    public String getValueFromInput(By locator) {
+    public String getValue(By locator) {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).getAttribute("value");
     }
 }
