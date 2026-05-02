@@ -18,8 +18,9 @@ public class HomePage extends BasePage {
         super(driver);
     }
 
-    public void clickJoinTmdbLink() {
+    public SignUpPage clickJoinTmdbLink() {
        click(joinTmdbLink);
+       return new SignUpPage(driver);
     }
 
     public void clickLoginLink() {

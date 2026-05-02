@@ -34,8 +34,8 @@ public class HomePageTests extends BaseTest {
     }
 
     @Test(dataProvider = "blankData", dataProviderClass = DataProviderUtil.class)
-    public void shouldShownNoResultMessage_WhenSearchIsBlank() {
-        SearchPage searchPage = homePage.clickSearchButton();
+    public void shouldShownNoResultMessage_WhenSearchIsBlank(String search) {
+        SearchPage searchPage = homePage.search(search);
 
         Assert.assertTrue(searchPage.isNoResultMessage(), "Expected to display no result");
     }

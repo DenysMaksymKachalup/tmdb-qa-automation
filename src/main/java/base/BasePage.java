@@ -1,6 +1,7 @@
 package base;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -16,10 +17,8 @@ public class BasePage {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    public BasePage() {
-    }
-
     public void type(By locator, String text) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).clear();
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(text);
     }
 
@@ -29,5 +28,9 @@ public class BasePage {
 
     public boolean isVisible(By locator) {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).isDisplayed();
+    }
+
+    public String getValue(By locator) {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).getAttribute("value");
     }
 }
