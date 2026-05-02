@@ -30,7 +30,8 @@ public class HomePage extends BasePage {
         type(searchTextBox, text);
     }
 
-    public void clickSearchButton() {
+    public SearchPage clickSearchButton() {
         click(searchButton);
+        return new SearchPage(driver);
     }
 }
